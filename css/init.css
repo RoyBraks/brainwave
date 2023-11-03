@@ -7,8 +7,8 @@
 
 .fascinatingpeople-body {
   background: url(../assets/Background-brainwave.png) center;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-repeat: repeat-y;
+  background-size: contain;
 }
 
 .main-container {
@@ -263,6 +263,41 @@
   bottom: 3rem;
 }
 
+.content-middle {
+  display: flex;
+  flex-direction: column;
+  gap: 8em;
+  align-items: center;
+  padding: 5em 0;
+}
+.content-middle h1 {
+  font-size: 4rem;
+}
+
+.content-middle-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  width: 50%;
+  text-align: left;
+}
+.content-middle-text h2 {
+  font-weight: 500;
+}
+.content-middle-text ul {
+  list-style-type: disc;
+  padding: 0 10px;
+}
+.content-middle-text ul li {
+  font-family: "inter";
+  font-weight: 100;
+  line-height: 2em;
+}
+
+.content-algemeen h2 {
+  margin-top: 3em;
+}
+
 .content-horizontal {
   display: flex;
   flex-direction: column;
@@ -363,7 +398,7 @@
   align-items: center;
 }
 
-.background-first, .background-second, .background-third, .background-forth {
+.background-first, .background-first-v2, .background-second, .background-third, .background-forth {
   position: relative;
 }
 
@@ -377,6 +412,20 @@
   top: -120%; /* Adjust the positioning to move it above the borders */
   right: 0%;
   bottom: -160%;
+  left: -20px;
+  z-index: -1;
+}
+
+.background-first-v2::before {
+  content: "";
+  background: url("../assets/line1.png");
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  background-size: cover;
+  position: absolute; /* Position the pseudo-element */
+  top: -160%; /* Adjust the positioning to move it above the borders */
+  right: 0%;
+  bottom: -200%;
   left: -20px;
   z-index: -1;
 }
@@ -453,6 +502,9 @@
     font-size: 0.9rem;
     line-height: 1.5rem;
   }
+  .content-middle-title h1 {
+    font-size: 3rem;
+  }
   .content-horizontal-box-image {
     width: 35%;
   }
@@ -466,6 +518,12 @@
   }
 }
 @media (max-width: 950px) {
+  .content-middle {
+    gap: 5em;
+  }
+  .content-middle-title h1 {
+    font-size: 2rem;
+  }
   .content-horizontal-box-text {
     width: 80%;
     margin-bottom: 3rem;
@@ -523,11 +581,17 @@
     font-size: 1.2rem;
     line-height: 1.5rem;
   }
-  .background-first::before, .background-second::before, .background-third::before, .background-forth::before {
+  .background-first::before, .background-first-v2::before, .background-second::before, .background-third::before, .background-forth::before {
     background: none;
   }
 }
 @media (max-width: 520px) {
+  .content-middle-text {
+    width: 85%;
+  }
+  .content-middle {
+    gap: 2em;
+  }
   .content-horizontal-box-text {
     width: 90%;
     margin-bottom: 3rem;
@@ -621,6 +685,32 @@
   display: flex;
   gap: 8rem;
   flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.footer-container-top, .footer-container-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 5em;
+  flex-wrap: wrap;
+}
+
+.footer-container-bottom {
+  align-items: baseline;
+}
+
+.footer-terms-container {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+}
+.footer-terms-container h3 {
+  font-size: 0.6em;
+  margin: 0;
+}
+.footer-terms-container a {
+  text-decoration: none;
+  color: #1B1C1E;
 }
 
 .footer-contact {
@@ -629,6 +719,7 @@
   left: 0;
   text-align: left;
   gap: 2rem;
+  position: relative;
 }
 
 .footer-contact-container {
@@ -652,7 +743,6 @@
 .footer-adres-socials {
   display: flex;
   gap: 1em;
-  margin-top: 3em;
 }
 
 .footer-adres-socials-links {
