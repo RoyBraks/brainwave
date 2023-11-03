@@ -460,7 +460,7 @@
 
 .background-forth::before {
   content: "";
-  background: url("../assets/line5.png");
+  background: url("../assets/linebig.png");
   background-repeat: no-repeat;
   background-clip: border-box;
   position: absolute; /* Position the pseudo-element */
