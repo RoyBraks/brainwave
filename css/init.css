@@ -297,6 +297,9 @@
 .content-algemeen h2 {
   margin-top: 3em;
 }
+.content-algemeen #artikel {
+  margin-top: 0;
+}
 
 .content-horizontal {
   display: flex;
